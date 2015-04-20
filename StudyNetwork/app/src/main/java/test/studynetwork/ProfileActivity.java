@@ -30,7 +30,7 @@ public class ProfileActivity extends ActionBarActivity {
 
     public void buttonOnClick(View v)
     {
-        //TODO: Make the fields editable
+        //TODO: Move to study group information page on click
     }
 
 

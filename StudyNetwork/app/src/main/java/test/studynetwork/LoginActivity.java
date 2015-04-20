@@ -126,7 +126,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         boolean cancel = false;
         View focusView = null;
+        if(TextUtils.isEmpty(password)){
+            //Make the password required.
 
+            cancel = true;
+            focusView = mPasswordView;
+            mPasswordView.setError(getString(R.string.error_invalid_password));
+        }
 
         // Check for a valid password, if the user entered one.
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
@@ -170,11 +176,15 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     }
 
     private boolean isPasswordValid(String password) {
+        //TODO: Make this actually force a password, that is valid
+        //Currently no password is required to login to the system
+
         Pattern p = Pattern.compile("[0-9A-Za-z!@#$%&*;'\"_]{8,}");
         Matcher m = p.matcher(password);
 
 
-        return m.find();
+        if (m.find()) return true;
+        else return false;
     }
 
     /**
