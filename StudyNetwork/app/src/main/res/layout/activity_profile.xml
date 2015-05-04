@@ -21,13 +21,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/groupListView"
         android:choiceMode="singleChoice"
+        android:clickable="true"
+        android:contentDescription="Study Groups"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/textView5"
-        android:clickable="false"
-        android:contentDescription="Study Groups" />
+        android:layout_below="@+id/textView5" />
 
     <TextView
         android:layout_width="wrap_content"

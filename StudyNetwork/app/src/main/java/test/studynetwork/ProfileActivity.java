@@ -13,12 +13,16 @@ package test.studynetwork;
 
 
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class ProfileActivity extends ActionBarActivity {
 
@@ -26,11 +30,19 @@ public class ProfileActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        getGroups();
     }
 
     public void buttonOnClick(View v)
     {
+        //Not working...
+        ListView myList = (ListView) findViewById(R.id.groupListView);
         //TODO: Move to study group information page on click
+        myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                getView(position, view, parent);
+            }
+        });
     }
 
 
@@ -56,4 +68,27 @@ public class ProfileActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void getGroups() {
+        String[] contain = {"a", "b", "c"};
+
+        ArrayAdapter<String> groupAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, contain);
+        final ListView myList = (ListView) findViewById(R.id.groupListView);
+        myList.setAdapter(groupAdapter);
+     }
+
+
+    public View getView(final int position, View convertView, final ViewGroup parent) {
+        //should be used to move the view from the list to the studygroup page. Not hooked into
+        //anything on the application at the moment. 
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                startActivity(new Intent(ProfileActivity.this, StudyGroupViewer.class));
+            }
+        });
+
+        return convertView;
+    }
+
 }
