@@ -23,16 +23,49 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class ProfileActivity extends ActionBarActivity {
+ListView list;
+    String[] web = {
+            "StudyThyme",
+            "Growl'n'Prowl",
+            "StressedPurrrrry",
+            "ColorMeStressed",
+            "AttackOfTheFinals",
+            "DogPunsIGuess"
+    } ;
+    Integer[] imageId = {
+            R.drawable.cat1,
+            R.drawable.cat2,
+            R.drawable.multicat,
+            R.drawable.colorcat,
+            R.drawable.cat4,
+            R.drawable.notcat
+
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        getGroups();
-    }
+        //getGroups();
 
+        CustomList adapter = new
+                CustomList(ProfileActivity.this, web, imageId);
+        list=(ListView)findViewById(R.id.groupListView);
+        list.setAdapter(adapter);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Toast.makeText(ProfileActivity.this, "You Clicked at " + web[+position], Toast.LENGTH_SHORT).show();
+            }
+
+    });
+    }
     public void buttonOnClick(View v)
     {
         //Not working...
@@ -80,7 +113,7 @@ public class ProfileActivity extends ActionBarActivity {
 
     public View getView(final int position, View convertView, final ViewGroup parent) {
         //should be used to move the view from the list to the studygroup page. Not hooked into
-        //anything on the application at the moment. 
+        //anything on the application at the moment.
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
