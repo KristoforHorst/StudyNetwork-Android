@@ -168,8 +168,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     }
 
     private boolean isEmailValid(String email) {
-
-        Pattern p = Pattern.compile(".+@smu.edu");
+        Pattern p = Pattern.compile("KKitman@smu.edu");
+       // Pattern p = Pattern.compile(".+@smu.edu");
         Matcher m = p.matcher(email);
 
         return m.find();
