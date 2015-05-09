@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Group Name"
+        android:text="Group Name: Genius Loading..."
         android:id="@+id/textView7"
         android:layout_below="@+id/textView6"
         android:layout_alignParentLeft="true"
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Group Meeting Location"
+        android:text="Group Meeting Location: Caruth 441"
         android:id="@+id/textView8"
         android:layout_below="@+id/textView7"
         android:layout_alignParentLeft="true"
@@ -40,19 +40,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Group Meet Time"
+        android:text="Group Meet Time: 1:00 AM MWF"
         android:id="@+id/textView9"
+        android:layout_alignRight="@+id/textView6"
+        android:layout_alignEnd="@+id/textView6"
         android:layout_below="@+id/textView8"
-        android:layout_alignRight="@+id/textView8"
-        android:layout_alignEnd="@+id/textView8" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/groupMemberListView"
-        android:layout_below="@+id/textView9"
-        android:layout_alignRight="@+id/textView9"
-        android:layout_alignEnd="@+id/textView9"
-        android:layout_marginTop="38dp"
-        android:choiceMode="none" />
 </RelativeLayout>

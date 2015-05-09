@@ -28,7 +28,7 @@ import android.widget.Toast;
 public class ProfileActivity extends ActionBarActivity {
 ListView list;
     String[] web = {
-            "StudyThyme",
+            "Genius Loading...",
             "Growl'n'Prowl",
             "StressedPurrrrry",
             "ColorMeStressed",
@@ -62,6 +62,7 @@ ListView list;
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 Toast.makeText(ProfileActivity.this, "You Clicked at " + web[+position], Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(ProfileActivity.this, StudyGroupViewer.class));
             }
 
     });

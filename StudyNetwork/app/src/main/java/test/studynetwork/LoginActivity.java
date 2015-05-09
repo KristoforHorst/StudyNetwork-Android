@@ -168,7 +168,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     }
 
     private boolean isEmailValid(String email) {
-        Pattern p = Pattern.compile("KKitman@smu.edu");
+        Pattern p = Pattern.compile("Khorst@smu.edu");
        // Pattern p = Pattern.compile(".+@smu.edu");
         Matcher m = p.matcher(email);
 
@@ -176,8 +176,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     }
 
     private boolean isPasswordValid(String password) {
-        //TODO: Make this actually force a password, that is valid
-        //Currently no password is required to login to the system
+
 
         Pattern p = Pattern.compile("[0-9A-Za-z!@#$%&*;'\"_]{8,}");
         Matcher m = p.matcher(password);
